@@ -1,0 +1,28 @@
+<h3>{{ !course?.id ? 'Създай нов курс' : 'Редактирай курс' }}</h3>
+<hr>
+<form
+       [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div class="formgroup">
+    <label for="title">Заглавие
+    </label>
+    <input type="text"
+           id="title"
+           formControlName="title">
+    <small *ngIf="titleFormControl?.touched &&
+                  titleFormControl?.invalid &&
+                  titleFormControl?.hasError('required')">
+      *This field is required!
+    </small>
+  </div>
+  <div>
+    <label for="description">Описание
+    </label>
+    <input type="text"
+           id="description"
+           formControlName="description">
+  </div>
+
+  <div>
+    <input type="submit" [disabled]="!formGroup.valid" value="Save"/>
+  </div>
+</form>

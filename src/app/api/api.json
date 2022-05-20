@@ -1,0 +1,14 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "SPA testing",
+      "description": "Single Page Aplication testing"
+    },
+    {
+      "id": 2,
+      "title": "Computer Graphics",
+      "description": "creating primitives and working with them"
+    }
+  ]
+}

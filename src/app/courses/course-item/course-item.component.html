@@ -1,0 +1,23 @@
+<article>
+  <header>
+    {{course.title}}
+  </header>
+  {{course.description}}
+  <footer>
+    <button type="button"
+            class="button"
+            (click)="onClick()">
+      Favorite
+    </button>
+
+  <div class="right">
+    <button type="button"
+            class="button"
+            (click)="onDelete()">Delete
+    </button>
+
+    <a class="button"
+       [routerLink]="['/courses/edit/',course?.id]">Edit</a>
+  </div>
+  </footer>
+</article>
