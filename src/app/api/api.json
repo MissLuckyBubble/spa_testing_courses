@@ -9,6 +9,11 @@
       "id": 2,
       "title": "Computer Graphics",
       "description": "creating primitives and working with them"
+    },
+    {
+      "id": 3,
+      "title": "Test course",
+      "description": "test course1"
     }
   ]
 }

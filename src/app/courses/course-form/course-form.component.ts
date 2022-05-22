@@ -27,7 +27,8 @@ export class CourseFormComponent implements OnInit {
         if(params['id']){
           return this.courseService.getCourse$(params['id']);
         }
-        else return of(null)
+        else {
+          return of(null)}
       }),
       takeUntil(this.destroy$)
     ).subscribe({
@@ -44,7 +45,7 @@ export class CourseFormComponent implements OnInit {
     this.formGroup = this.fb.group({
       id: this.course?.id,
       title: [this.course?.title, [Validators.required, Validators.minLength(3)]],
-      description: [this.course?.description, [Validators.maxLength(10)]]
+      description: [this.course?.description, [Validators.maxLength(15)]]
     });
   }
 
@@ -58,13 +59,7 @@ export class CourseFormComponent implements OnInit {
 
     }
     let request$;
-
-    if (this.formGroup.value.id) {
-
-      request$ = this.courseService.save$(this.formGroup.value)
-    } else {
-      request$ = this.courseService.save$(this.formGroup.value)
-    }
+    request$ = this.courseService.save$(this.formGroup.value)
     request$.subscribe({
       next: ()=>{
         this.router.navigate(['/']);
