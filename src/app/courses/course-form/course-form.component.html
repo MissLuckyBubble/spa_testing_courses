@@ -1,4 +1,6 @@
-<h3>{{ !course?.id ? 'Създай нов курс' : 'Редактирай курс' }}</h3>
+<h3
+  data-test-selector="title"
+>{{ !course?.id ? 'Създай нов курс' : 'Редактирай курс' }}</h3>
 <hr>
 <form
        [formGroup]="formGroup" (ngSubmit)="onSubmit()">
@@ -8,7 +10,9 @@
     <input type="text"
            id="title"
            formControlName="title">
-    <small *ngIf="titleFormControl?.touched &&
+    <small
+      data-test-selector="error"
+      *ngIf="titleFormControl?.touched &&
                   titleFormControl?.invalid &&
                   titleFormControl?.hasError('required')">
       *This field is required!
@@ -23,6 +27,13 @@
   </div>
 
   <div>
-    <input type="submit" [disabled]="!formGroup.valid" value="Save"/>
+    <input
+      data-test-selector="button-save"
+      type="submit" [disabled]="!formGroup.valid" value="Save"/>
   </div>
+
+  <a style="margin-left: 1rem"
+     data-test-selector="button-back"
+     routerLink="/"> Back to list
+  </a>
 </form>

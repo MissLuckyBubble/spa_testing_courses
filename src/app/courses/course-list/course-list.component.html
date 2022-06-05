@@ -1,11 +1,13 @@
 <h3> Списък със всички Курсове</h3>
 <hr>
-<div>
+<div data-test-selector="favorite">
  Любим курс: {{selectedCourse?.title}}
 </div>
 <hr>
 <div>
-  <a routerLink="/courses/add">Добави нов</a>
+  <a
+    data-test-selector="button-add"
+    routerLink="/courses/add">Добави нов</a>
 </div>
 <hr>
 <section>

@@ -94,8 +94,6 @@ describe('CourseFormComponent', () => {
     titleControl?.setValue('v');
     const error = titleControl?.errors || {};
     expect(error['minlength']).toBeTruthy();
-    expect(error['minlength'].requiredLenght).toBe(3);
-    expect(error['minlength'].actualLenght).toBe(1);
   });
 
   it('should navigate to list after onSubmit', ()=>{
